@@ -43,14 +43,30 @@
                                     <segue destination="NNO-KH-YoR" kind="show" id="5Y3-Cl-UuV"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wh3-Nt-iNe">
+                                <rect key="frame" x="229" y="330" width="91" height="30"/>
+                                <state key="normal" title="Just a button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O5V-Wp-1pP">
+                                <rect key="frame" x="229" y="330" width="91" height="30"/>
+                                <state key="normal" title="Just a button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="kAP-rT-QmD" firstAttribute="leading" secondItem="wfa-oQ-I7G" secondAttribute="leading" id="LXM-k2-2gN"/>
+                            <constraint firstItem="Wh3-Nt-iNe" firstAttribute="leading" secondItem="O5V-Wp-1pP" secondAttribute="leading" id="ND8-39-nQG"/>
+                            <constraint firstItem="Wh3-Nt-iNe" firstAttribute="baseline" secondItem="O5V-Wp-1pP" secondAttribute="baseline" id="Sif-w6-Cpd"/>
                             <constraint firstItem="wfa-oQ-I7G" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="UOa-65-RHl"/>
                             <constraint firstItem="kAP-rT-QmD" firstAttribute="top" secondItem="nbr-qC-m6D" secondAttribute="bottom" constant="14" id="XW7-WJ-4WI"/>
+                            <constraint firstItem="Wh3-Nt-iNe" firstAttribute="leading" secondItem="wfa-oQ-I7G" secondAttribute="leading" id="dLn-sb-te6"/>
                             <constraint firstItem="nbr-qC-m6D" firstAttribute="leading" secondItem="kAP-rT-QmD" secondAttribute="leading" id="h8h-uD-CVM"/>
                             <constraint firstItem="wfa-oQ-I7G" firstAttribute="top" secondItem="kAP-rT-QmD" secondAttribute="bottom" constant="15" id="mQQ-1q-BQ1"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="O5V-Wp-1pP" secondAttribute="bottom" constant="240" id="sS5-La-wAN"/>
                             <constraint firstItem="wfa-oQ-I7G" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vis-hg-siI"/>
                         </constraints>
                     </view>
