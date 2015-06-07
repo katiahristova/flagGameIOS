@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -25,17 +25,8 @@
                                     <action selector="fbLoginClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zkV-Om-vhg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kAP-rT-QmD">
-                                <rect key="frame" x="243" y="239" width="115" height="30"/>
-                                <state key="normal" title="Login with Parse">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="NNO-KH-YoR" kind="show" id="5Y3-Cl-UuV"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nbr-qC-m6D">
-                                <rect key="frame" x="237" y="195" width="127" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nbr-qC-m6D">
+                                <rect key="frame" x="229" y="196" width="127" height="30"/>
                                 <state key="normal" title="Signup With Parse">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -43,16 +34,24 @@
                                     <segue destination="tMq-I9-jg5" kind="show" id="1fS-bh-QuL"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kAP-rT-QmD">
+                                <rect key="frame" x="229" y="240" width="115" height="30"/>
+                                <state key="normal" title="Login with Parse">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="NNO-KH-YoR" kind="show" id="5Y3-Cl-UuV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="nbr-qC-m6D" secondAttribute="centerX" constant="-0.5" id="6gl-sP-VjT"/>
-                            <constraint firstAttribute="centerY" secondItem="wfa-oQ-I7G" secondAttribute="centerY" id="HTg-Zk-6mb"/>
-                            <constraint firstItem="wfa-oQ-I7G" firstAttribute="top" secondItem="kAP-rT-QmD" secondAttribute="bottom" constant="19" id="ahL-cA-rz3"/>
-                            <constraint firstAttribute="centerX" secondItem="wfa-oQ-I7G" secondAttribute="centerX" constant="-0.5" id="e2z-pg-SiS"/>
-                            <constraint firstAttribute="centerX" secondItem="kAP-rT-QmD" secondAttribute="centerX" constant="-0.5" id="m59-Wv-bzk"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wfa-oQ-I7G" secondAttribute="bottom" constant="285" id="w5k-Ed-r8f"/>
-                            <constraint firstItem="kAP-rT-QmD" firstAttribute="top" secondItem="nbr-qC-m6D" secondAttribute="bottom" constant="14" id="wMh-es-Lb9"/>
+                            <constraint firstItem="kAP-rT-QmD" firstAttribute="leading" secondItem="wfa-oQ-I7G" secondAttribute="leading" id="LXM-k2-2gN"/>
+                            <constraint firstItem="wfa-oQ-I7G" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="UOa-65-RHl"/>
+                            <constraint firstItem="kAP-rT-QmD" firstAttribute="top" secondItem="nbr-qC-m6D" secondAttribute="bottom" constant="14" id="XW7-WJ-4WI"/>
+                            <constraint firstItem="nbr-qC-m6D" firstAttribute="leading" secondItem="kAP-rT-QmD" secondAttribute="leading" id="h8h-uD-CVM"/>
+                            <constraint firstItem="wfa-oQ-I7G" firstAttribute="top" secondItem="kAP-rT-QmD" secondAttribute="bottom" constant="15" id="mQQ-1q-BQ1"/>
+                            <constraint firstItem="wfa-oQ-I7G" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vis-hg-siI"/>
                         </constraints>
                     </view>
                 </viewController>
