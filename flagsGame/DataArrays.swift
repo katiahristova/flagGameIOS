@@ -19,7 +19,7 @@ class DataArrays {
     var arrayOceania = [""]
     var arraySouth_America = [""]
 
-    func getAfricaList(regions:[String]) -> [String] {
+    func getCountriesList(regions:[String]) -> [String] {
         var arrayToReturn:[String] = []
         if (contains(regions,"Africa"))
         {
