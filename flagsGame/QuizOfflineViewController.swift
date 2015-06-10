@@ -30,7 +30,7 @@ class QuizOfflineViewController: UIViewController {
         var data = DataArrays()
         
         //Set regions for the game
-        var regions = ["Africa", "Asia"]
+        var regions = ["Africa", "Asia", "Europe"]
         //Get flags filename list according to regions selected
         arrayAfrica = data.getAfricaList(regions)
         
