@@ -85,6 +85,7 @@
 		8AB81E311B16106E001DBFEF /* flagsGame-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "flagsGame-Bridging-Header.h"; sourceTree = "<group>"; };
 		8AB81E351B162514001DBFEF /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		8AB81E371B1657C0001DBFEF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		8ADA88091B27C4720054E355 /* DataArrays.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataArrays.swift; sourceTree = "<group>"; };
 		8AE343EC1B24F829006CFD89 /* QuizOfflineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizOfflineViewController.swift; sourceTree = "<group>"; };
 		8AE343EE1B2503F5006CFD89 /* AssetCatalog.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AssetCatalog.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -161,6 +162,7 @@
 				8AB81E351B162514001DBFEF /* SignUpViewController.swift */,
 				8AE343EC1B24F829006CFD89 /* QuizOfflineViewController.swift */,
 				8AE343EE1B2503F5006CFD89 /* AssetCatalog.xcassets */,
+				8ADA88091B27C4720054E355 /* DataArrays.swift */,
 			);
 			path = flagsGame;
 			sourceTree = "<group>";
@@ -322,6 +324,7 @@
 				8AB81E381B1657C0001DBFEF /* LoginViewController.swift in Sources */,
 				8AB81E361B162514001DBFEF /* SignUpViewController.swift in Sources */,
 				8AB81DE91B16088E001DBFEF /* ViewController.swift in Sources */,
+				8ADA880A1B27C4720054E355 /* DataArrays.swift in Sources */,
 				8AB81DE71B16088E001DBFEF /* AppDelegate.swift in Sources */,
 				8AE343ED1B24F829006CFD89 /* QuizOfflineViewController.swift in Sources */,
 			);

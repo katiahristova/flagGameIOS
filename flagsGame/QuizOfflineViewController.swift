@@ -9,33 +9,7 @@
 import UIKit
 
 class QuizOfflineViewController: UIViewController {
-    var arrayAfrica = ["Africa-Algeria", "Africa-Madagascar",
-        "Africa-Angola", "Africa-Malawi","Africa-Benin",
-        "Africa-Mali", "Africa-Botswana", "Africa-Mauritania",
-        "Africa-Burkina_Faso", "Africa-Mauritius",
-        "Africa-Burundi", "Africa-Morocco",
-    "Africa-Cameroon", "Africa-Mozambique",
-        "Africa-Cape_Verde", "Africa-Namibia",
-    "Africa-Central_African_Republic",	"Africa-Niger",
-    "Africa-Chad", "Africa-Nigeria",
-    "Africa-Comoros", "Africa-Republic_Of_Congo",
-    "Africa-DRO_Congo",			"Africa-Rwanda",
-    "Africa-Djibouti",			"Africa-Sao_Tome",
-    "Africa-Egypt",			"Africa-Senegal",
-    "Africa-Equatorial_Guinea",		"Africa-Seychelles",
-    "Africa-Eritrea",			"Africa-Sierra_Leone",
-    "Africa-Ethiopia",			"Africa-Somalia",
-    "Africa-Gabon",			"Africa-South_Africa",
-    "Africa-Gambia",			"Africa-Sudan",
-    "Africa-Ghana",			"Africa-Swaziland",
-    "Africa-Guinea",			"Africa-Tanzania",
-    "Africa-Guinea_Bissau",		"Africa-Togo",
-    "Africa-Ivory_Coast",			"Africa-Tunisia",
-    "Africa-Kenya",			"Africa-Uganda",
-    "Africa-Lesotho",			"Africa-Zambia",
-    "Africa-Liberia",			"Africa-Zimbabwe",
-    "Africa-Libya"]
-    
+    var arrayAfrica = [""]
     var index = 0
     @IBOutlet weak var flagView: UIImageView!
     
@@ -53,6 +27,13 @@ class QuizOfflineViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        var data = DataArrays()
+        
+        //Set regions for the game
+        var regions = ["Africa", "Asia"]
+        //Get flags filename list according to regions selected
+        arrayAfrica = data.getAfricaList(regions)
+        
         // Do any additional setup after loading the view.
     }
 
