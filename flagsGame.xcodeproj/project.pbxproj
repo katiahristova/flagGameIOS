@@ -36,6 +36,8 @@
 		8AB81E301B160FFB001DBFEF /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AB81E2F1B160FFB001DBFEF /* libsqlite3.dylib */; };
 		8AB81E361B162514001DBFEF /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB81E351B162514001DBFEF /* SignUpViewController.swift */; };
 		8AB81E381B1657C0001DBFEF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB81E371B1657C0001DBFEF /* LoginViewController.swift */; };
+		8AE343ED1B24F829006CFD89 /* QuizOfflineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE343EC1B24F829006CFD89 /* QuizOfflineViewController.swift */; };
+		8AE343EF1B2503F5006CFD89 /* AssetCatalog.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AE343EE1B2503F5006CFD89 /* AssetCatalog.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,8 @@
 		8AB81E311B16106E001DBFEF /* flagsGame-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "flagsGame-Bridging-Header.h"; sourceTree = "<group>"; };
 		8AB81E351B162514001DBFEF /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		8AB81E371B1657C0001DBFEF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		8AE343EC1B24F829006CFD89 /* QuizOfflineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizOfflineViewController.swift; sourceTree = "<group>"; };
+		8AE343EE1B2503F5006CFD89 /* AssetCatalog.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AssetCatalog.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +159,8 @@
 				8AB81DEF1B16088E001DBFEF /* LaunchScreen.xib */,
 				8AB81DE41B16088E001DBFEF /* Supporting Files */,
 				8AB81E351B162514001DBFEF /* SignUpViewController.swift */,
+				8AE343EC1B24F829006CFD89 /* QuizOfflineViewController.swift */,
+				8AE343EE1B2503F5006CFD89 /* AssetCatalog.xcassets */,
 			);
 			path = flagsGame;
 			sourceTree = "<group>";
@@ -292,6 +298,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AE343EF1B2503F5006CFD89 /* AssetCatalog.xcassets in Resources */,
 				8AB81DEC1B16088E001DBFEF /* Main.storyboard in Resources */,
 				8AB81DF11B16088E001DBFEF /* LaunchScreen.xib in Resources */,
 				8AB81DEE1B16088E001DBFEF /* Images.xcassets in Resources */,
@@ -316,6 +323,7 @@
 				8AB81E361B162514001DBFEF /* SignUpViewController.swift in Sources */,
 				8AB81DE91B16088E001DBFEF /* ViewController.swift in Sources */,
 				8AB81DE71B16088E001DBFEF /* AppDelegate.swift in Sources */,
+				8AE343ED1B24F829006CFD89 /* QuizOfflineViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pwM-G9-72M">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -73,7 +74,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1479" y="-2829"/>
+            <point key="canvasLocation" x="-951" y="-2807"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="0OX-83-KvD">
@@ -147,7 +148,50 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kaV-IG-JFk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-767" y="-2823"/>
+            <point key="canvasLocation" x="-291" y="-2807"/>
+        </scene>
+        <!--Quiz Offline View Controller-->
+        <scene sceneID="VJh-XD-uJt">
+            <objects>
+                <viewController id="pwM-G9-72M" customClass="QuizOfflineViewController" customModule="flagsGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jP4-P3-hv5"/>
+                        <viewControllerLayoutGuide type="bottom" id="3Oj-o6-c3e"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="b6R-Oo-6bg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G3v-5V-fRx">
+                                <rect key="frame" x="261" y="285" width="79" height="30"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextButtonClick:" destination="pwM-G9-72M" eventType="touchUpInside" id="5Rh-EF-j8W"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Africa-Cameroon" translatesAutoresizingMaskIntoConstraints="NO" id="tLq-9d-HO7">
+                                <rect key="frame" x="147" y="41" width="307" height="184"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3Oj-o6-c3e" firstAttribute="top" secondItem="G3v-5V-fRx" secondAttribute="bottom" constant="330" id="71C-P3-A7A"/>
+                            <constraint firstItem="G3v-5V-fRx" firstAttribute="top" secondItem="tLq-9d-HO7" secondAttribute="bottom" constant="30" id="BD4-xU-ome"/>
+                            <constraint firstItem="tLq-9d-HO7" firstAttribute="leading" secondItem="b6R-Oo-6bg" secondAttribute="leadingMargin" constant="30" id="DlF-IN-y5L"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tLq-9d-HO7" secondAttribute="trailing" constant="30" id="f3W-RR-ZPA"/>
+                            <constraint firstItem="tLq-9d-HO7" firstAttribute="top" secondItem="jP4-P3-hv5" secondAttribute="bottom" constant="60" id="gf5-RO-vIt"/>
+                            <constraint firstAttribute="centerX" secondItem="tLq-9d-HO7" secondAttribute="centerX" id="tje-PF-fbh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="flagView" destination="tLq-9d-HO7" id="kHf-rM-tlb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J26-WI-RxX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1719" y="-2799"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="ppJ-KC-Rxh">
@@ -214,7 +258,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2rf-hS-0Co" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-759" y="-2099"/>
+            <point key="canvasLocation" x="-291" y="-2047"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="e3b-mA-7Gj">
@@ -244,7 +288,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mdg-5Z-O9d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-71" y="-2823"/>
+            <point key="canvasLocation" x="389" y="-2807"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Africa-Cameroon" width="480" height="306"/>
+    </resources>
 </document>
