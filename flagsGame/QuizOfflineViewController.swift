@@ -9,14 +9,14 @@
 import UIKit
 
 class QuizOfflineViewController: UIViewController {
-    var arrayAfrica = [""]
+    var arrayAllCountries = [""]
     var index = 0
     @IBOutlet weak var flagView: UIImageView!
     
     @IBAction func nextButtonClick(sender: UIButton) {
         
-        flagView.image = UIImage(named:arrayAfrica[index])
-        if (index < arrayAfrica.count-1)
+        flagView.image = UIImage(named:arrayAllCountries[index])
+        if (index < arrayAllCountries.count-1)
         {
             index++ }
         else
@@ -34,24 +34,32 @@ class QuizOfflineViewController: UIViewController {
         var numberOfGuesses = 6;
         
         //Get flags filename list according to regions selected
-        arrayAfrica = data.getCountriesList(regions)
+        arrayAllCountries = data.getCountriesList(regions)
+        
+        var questionCountries = data.getCountriesForQuestion(numberOfGuesses, countries: arrayAllCountries)
+        var correctAnswer = questionCountries[data.getRandomIndex(questionCountries)]
+        println(correctAnswer)
+        
         
         // Do any additional setup after loading the view.
         
         var buttonYplacement = 400
+        var nextLabel = 0
         for var i = 0; i<numberOfGuesses/2; i++
         {
             let buttonLeft   = UIButton.buttonWithType(UIButtonType.System) as! UIButton
             buttonLeft.frame = CGRectMake(40, CGFloat(buttonYplacement), 120, 50)
             buttonLeft.backgroundColor = UIColor.yellowColor()
-            buttonLeft.setTitle("Test Button", forState: UIControlState.Normal)
+            buttonLeft.setTitle(questionCountries[nextLabel], forState: UIControlState.Normal)
+            nextLabel++
             buttonLeft.addTarget(self, action: "buttonAction:", forControlEvents: UIControlEvents.TouchUpInside)
             self.view.addSubview(buttonLeft)
         
             let buttonRight   = UIButton.buttonWithType(UIButtonType.System) as! UIButton
             buttonRight.frame = CGRectMake(200, CGFloat(buttonYplacement), 120, 50)
             buttonRight.backgroundColor = UIColor.yellowColor()
-            buttonRight.setTitle("Test Button", forState: UIControlState.Normal)
+            buttonRight.setTitle(questionCountries[nextLabel], forState: UIControlState.Normal)
+            nextLabel++
             buttonRight.addTarget(self, action: "buttonAction:", forControlEvents: UIControlEvents.TouchUpInside)
             self.view.addSubview(buttonRight)
             

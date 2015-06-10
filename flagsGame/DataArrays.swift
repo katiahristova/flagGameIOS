@@ -47,4 +47,35 @@ class DataArrays {
         
         return arrayToReturn }
     
+    func getRandomIndex(countries:[String]) -> Int {
+        return Int(arc4random_uniform(UInt32(countries.count)))
+    }
+    
+    func getCountriesForQuestion(number:Int, countries:[String]) -> [String]
+    {
+        var questionCountries:[String] = []
+        while questionCountries.count<number
+        {
+            var newCountry = countries[getRandomIndex(countries)]
+            while contains(questionCountries,newCountry)
+            { newCountry = countries[getRandomIndex(countries)] }
+            questionCountries.append(newCountry)
+            
+        }
+        return questionCountries
+    }
+    
+    
+}
+
+extension Array
+{
+    /** Randomizes the order of an array's elements. */
+    mutating func shuffle()
+    {
+        for _ in 0..<10
+        {
+            sort { (_,_) in arc4random() < arc4random() }
+        }
+    }
 }
