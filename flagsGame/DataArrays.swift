@@ -15,9 +15,9 @@ class DataArrays {
     var arrayAsia = ["Asia-Afghanistan", "Asia-Armenia", "Asia-Azerbaijan", "Asia-Bahrain", "Asia-Bangladesh", "Asia-Bhutan", "Asia-Brunei", "Asia-Cambodia", "Asia-China", "Asia-Christmas_Island", "Asia-Hong_Kong", "Asia-India", "Asia-Indonesia","Asia-Iran","Asia-Iraq", "Asia-Israel", "Asia-Japan", "Asia-Jordan", "Asia-Kazakhstan", "Asia-Kuwait", "Asia-Kyrgyzstan", "Asia-Laos","Asia-Lebanon", "Asia-Macao","Asia-Malaysia", "Asia-Maldives","Asia-Mongolia","Asia-Myanmar","Asia-Nepal","Asia-North_Korea","Asia-Oman","Asia-Pakistan", "Asia-Philippines", "Asia-Qatar", "Asia-Republic_Of_Georgia", "Asia-Saudi_Arabia", "Asia-Singapore", "Asia-South_Georgia_And_The_South_Sandwich_Islands", "Asia-South_Korea","Asia-Sri_Lanka", "Asia-Syria", "Asia-Taiwan", "Asia-Tajikistan", "Asia-Thailand", "Asia-Tibet", "Asia-Timor_Leste", "Asia-Turkey", "Asia-Turkmenistan", "Asia-UAE", "Asia-Uzbekistan", "Asia-Vietnam", "Asia-Yemen"]
     
     var arrayEurope = ["Europe-Albania", "Europe-Latvia", "Europe-Andorra", "Europe-Liechtenstein", "Europe-Austria", "Europe-Lithuania", "Europe-Belarus", "Europe-Luxembourg", "Europe-Belgium", "Europe-Macedonia", "Europe-Bosnia_Herzegovina", "Europe-Malta", "Europe-Bulgaria", "Europe-Moldova", "Europe-Croatia", "Europe-Monaco", "Europe-Cyprus", "Europe-Netherlands", "Europe-Cyprus_North", "Europe-Norway", "Europe-Czech_Republic", 	"Europe-Poland", "Europe-Denmark", "Europe-Portugal", "Europe-Estonia", "Europe-Romania", "Europe-Faroe_Islands", "Europe-Russia", "Europe-Finland", "Europe-San_Marino", "Europe-France", "Europe-Serbia","Europe-Germany", 	"Europe-Slovakia", "Europe-Gibraltar", "Europe-Slovenia", "Europe-Greece", "Europe-Spain", "Europe-Greenland", "Europe-Sweden", "Europe-Hungary", 	"Europe-Switzerland", "Europe-Iceland", "Europe-Ukraine", "Europe-Ireland", "Europe-United_Kingdom", "Europe-Italy", "Europe-Vatican_City"]
-    var arrayNorth_America = []
-    var arrayOceania = []
-    var arraySouth_America = []
+    var arrayNorth_America = [""]
+    var arrayOceania = [""]
+    var arraySouth_America = [""]
 
     func getAfricaList(regions:[String]) -> [String] {
         var arrayToReturn:[String] = []
@@ -31,6 +31,18 @@ class DataArrays {
         if (contains(regions,"Europe"))
         {
             arrayToReturn += arrayEurope
+        }
+        if (contains(regions,"North_America"))
+        {
+            arrayToReturn += arrayNorth_America
+        }
+        if (contains(regions,"Oceania"))
+        {
+            arrayToReturn += arrayOceania
+        }
+        if (contains(regions,"South_America"))
+        {
+            arrayToReturn += arraySouth_America
         }
         
         return arrayToReturn }
