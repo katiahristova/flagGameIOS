@@ -186,6 +186,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="buttonNext" destination="G3v-5V-fRx" id="5cY-3V-G7N"/>
                         <outlet property="flagView" destination="tLq-9d-HO7" id="kHf-rM-tlb"/>
                     </connections>
                 </viewController>
