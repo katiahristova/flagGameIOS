@@ -8,14 +8,12 @@
 
 import UIKit
 
+
 class QuizOfflineViewController: UIViewController {
     var buttonsArray:[UIButton] = []
-    var data = DataArrays()
-    var arrayAllCountries:[String] = []
-    var questionCountries:[String] = []
+    var game = GameClass()
     var numberOfGuesses = 4;
-    var correctAnswer = ""
-    var index = 0
+    var regions = ["Africa", "Asia", "Europe", "North_America", "Oceania", "South_America"]
     @IBOutlet weak var flagView: UIImageView!
     @IBOutlet weak var buttonNext: UIButton!
     
@@ -23,24 +21,21 @@ class QuizOfflineViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         buttonNext.hidden = true
+        buttonNext.setTitle("next".localized, forState: UIControlState.Normal)
+        game.loadGameQuestion(regions, numberOfGuesses: numberOfGuesses)
+        createGuessButtons()
         
-        //Set regions for the game
-        var regions = ["Africa", "Asia", "Europe"]
-        
-        //Get flags filename list according to regions selected
-        arrayAllCountries = data.getCountriesList(regions)
-        
-        questionCountries = data.getCountriesForQuestion(numberOfGuesses, countries: arrayAllCountries)
-        correctAnswer = questionCountries[data.getRandomIndex(questionCountries)]
-        println(correctAnswer)
-        
-        flagView.image = UIImage(named:correctAnswer)
-        
+        //Set flag image
+        flagView.image = UIImage(named:game.correctAnswer)
         
         // Do any additional setup after loading the view.
         
-        createGuessButtons()
-        
+        //Set guess buttons labels
+        for var i = 0; i<numberOfGuesses; i++
+        {
+            buttonsArray[i].setTitle(game.questionCountries[i], forState: UIControlState.Normal)
+        }
+
     }
 
     
@@ -52,22 +47,20 @@ class QuizOfflineViewController: UIViewController {
 
     func buttonAction(sender:UIButton!)
     {
-        if (sender.titleLabel?.text == correctAnswer)
+        if (sender.titleLabel?.text == game.correctAnswer)
         { buttonNext.hidden = false }
         println(sender.titleLabel?.text)
-        println("Button tapped")
-        
     }
     
     @IBAction func nextButtonClick(sender: UIButton) {
-        questionCountries = data.getCountriesForQuestion(numberOfGuesses, countries: arrayAllCountries)
-        correctAnswer = questionCountries[data.getRandomIndex(questionCountries)]
-        println(correctAnswer)
+        game.loadGameQuestion(regions, numberOfGuesses: numberOfGuesses)
+        flagView.image = UIImage(named:game.correctAnswer)
         
-        flagView.image = UIImage(named:correctAnswer)
         for var i = 0; i<numberOfGuesses; i++
         {
-            buttonsArray[i].setTitle(questionCountries[i], forState: UIControlState.Normal)
+            //var index = game.questionCountries.rangeOfString("_").startIndex
+            //var keyName:String = game.questionCountries[i].substringFromIndex(index)
+            buttonsArray[i].setTitle(game.questionCountries[i].localized, forState: UIControlState.Normal)
         }
         buttonNext.hidden = true
         
@@ -85,14 +78,11 @@ class QuizOfflineViewController: UIViewController {
     func createGuessButtons()
     {
         var buttonYplacement = 400
-        var nextLabel = 0
         for var i = 0; i<numberOfGuesses/2; i++
         {
             let buttonLeft   = UIButton.buttonWithType(UIButtonType.System) as! UIButton
             buttonLeft.frame = CGRectMake(40, CGFloat(buttonYplacement), 120, 50)
             buttonLeft.backgroundColor = UIColor.yellowColor()
-            buttonLeft.setTitle(questionCountries[nextLabel], forState: UIControlState.Normal)
-            nextLabel++
             buttonLeft.addTarget(self, action: "buttonAction:", forControlEvents: UIControlEvents.TouchUpInside)
             self.view.addSubview(buttonLeft)
             buttonsArray.append(buttonLeft)
@@ -100,8 +90,6 @@ class QuizOfflineViewController: UIViewController {
             let buttonRight   = UIButton.buttonWithType(UIButtonType.System) as! UIButton
             buttonRight.frame = CGRectMake(200, CGFloat(buttonYplacement), 120, 50)
             buttonRight.backgroundColor = UIColor.yellowColor()
-            buttonRight.setTitle(questionCountries[nextLabel], forState: UIControlState.Normal)
-            nextLabel++
             buttonRight.addTarget(self, action: "buttonAction:", forControlEvents: UIControlEvents.TouchUpInside)
             self.view.addSubview(buttonRight)
             buttonsArray.append(buttonRight)
@@ -120,4 +108,11 @@ class QuizOfflineViewController: UIViewController {
     }
     */
 
+}
+
+
+extension String {
+    var localized: String {
+        return NSLocalizedString(self, tableName: nil, bundle: NSBundle.mainBundle(), value: "", comment: "")
+    }
 }
