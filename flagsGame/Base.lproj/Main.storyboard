@@ -224,7 +224,7 @@
         <!--Fun With Flags-->
         <scene sceneID="dPC-T6-9pk">
             <objects>
-                <viewController id="cpM-E3-aXO" sceneMemberID="viewController">
+                <viewController id="cpM-E3-aXO" customClass="StartPageSinglePlayerViewController" customModule="flagsGame" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="scs-jp-VTT"/>
                         <viewControllerLayoutGuide type="bottom" id="vDT-mQ-40J"/>
@@ -239,7 +239,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="pwM-G9-72M" kind="show" id="P9D-ku-2PQ"/>
+                                    <segue destination="pwM-G9-72M" kind="show" identifier="seguePlayWithoutMap" id="P9D-ku-2PQ"/>
                                 </connections>
                             </button>
                         </subviews>

@@ -12,10 +12,10 @@ import UIKit
 class QuizOfflineViewController: UIViewController {
     var buttonsArray:[UIButton] = []
     var game = GameClass()
-    var numberOfGuesses = 4;
-    var numberOfQuestions = 5;
+    var numberOfGuesses = Int();
+    var numberOfQuestions = Int();
     var questionCounter = 1;
-    var regions = ["Africa", "Asia", "Europe", "North_America", "Oceania", "South_America"]
+    var regions:[String] = []
     @IBOutlet weak var flagView: UIImageView!
     
     @IBOutlet weak var labelQuestionNum: UILabel!
