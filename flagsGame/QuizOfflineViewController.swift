@@ -13,6 +13,8 @@ class QuizOfflineViewController: UIViewController {
     var buttonsArray:[UIButton] = []
     var game = GameClass()
     var numberOfGuesses = 4;
+    var numberOfQuestions = 5;
+    var questionCounter = 1;
     var regions = ["Africa", "Asia", "Europe", "North_America", "Oceania", "South_America"]
     @IBOutlet weak var flagView: UIImageView!
     @IBOutlet weak var buttonNext: UIButton!
@@ -33,8 +35,8 @@ class QuizOfflineViewController: UIViewController {
         //Set guess buttons labels
         for var i = 0; i<numberOfGuesses; i++
         {
-            var key = game.getLocalizedName(game.questionCountries[i])
-            buttonsArray[i].setTitle(key, forState: UIControlState.Normal)
+            setButtonLabel(game.questionCountries[i],button: buttonsArray[i])
+            
         }
 
     }
@@ -49,7 +51,18 @@ class QuizOfflineViewController: UIViewController {
     func buttonAction(sender:UIButton!)
     {
         if (sender.titleLabel?.text == game.correctAnswerLocalized)
-        { buttonNext.hidden = false }
+        { buttonNext.hidden = false
+            game.correctGuesses++
+            if (questionCounter==numberOfQuestions)
+            {
+                game.showEndOfGamePopup(self)
+            }
+        }
+        else
+        {
+            sender.enabled = false
+            game.incorrectGuesses++
+        }
         println(sender.titleLabel?.text)
         println("Correct answer: " + game.correctAnswerLocalized)
     }
@@ -57,11 +70,10 @@ class QuizOfflineViewController: UIViewController {
     @IBAction func nextButtonClick(sender: UIButton) {
         game.loadGameQuestion(regions, numberOfGuesses: numberOfGuesses)
         flagView.image = UIImage(named:game.correctAnswer)
-        
+        questionCounter++
         for var i = 0; i<numberOfGuesses; i++
         {
-            var key = game.getLocalizedName(game.questionCountries[i])
-            buttonsArray[i].setTitle(key.localized, forState: UIControlState.Normal)
+            setButtonLabel(game.questionCountries[i],button: buttonsArray[i])
         }
         buttonNext.hidden = true
         
@@ -77,6 +89,8 @@ class QuizOfflineViewController: UIViewController {
             index=0 }*/
     }
 
+    
+    //Creates buttons with guesses
     func createGuessButtons()
     {
         var buttonYplacement = 400
@@ -100,6 +114,14 @@ class QuizOfflineViewController: UIViewController {
         }
     }
     
+    //Sets a label to a button, gets label from string resources
+    func setButtonLabel(countryName:String, button:UIButton)
+    {
+        var key = game.getLocalizedName(countryName)
+        button.setTitle(key.localized, forState: UIControlState.Normal)
+        button.enabled = true
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -110,6 +132,7 @@ class QuizOfflineViewController: UIViewController {
     }
     */
 
+    
 }
 
 
@@ -118,3 +141,4 @@ extension String {
         return NSLocalizedString(self, tableName: nil, bundle: NSBundle.mainBundle(), value: "", comment: "")
     }
 }
+

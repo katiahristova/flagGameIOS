@@ -13,7 +13,8 @@ class GameClass  {
     var questionCountries:[String] = []
     var correctAnswer = ""
     var correctAnswerLocalized = ""
-    
+    var correctGuesses = 0;
+    var incorrectGuesses = 0;
     
     func loadGameQuestion(regions:[String], numberOfGuesses:Int)
     {
@@ -46,4 +47,23 @@ class GameClass  {
         
         return key.localized
     }
+    
+    
+    //Create and show an end of game popup
+    func showEndOfGamePopup(v:UIViewController)
+    {
+        var totalGuesses = correctGuesses + incorrectGuesses
+        var percentCorrect:Double = Double(correctGuesses)/Double(totalGuesses)*100
+        let formattedPercentCorrect = NSString(format: "%.2f", percentCorrect)
+        var msg = "Game finished. " + String(totalGuesses)
+        msg += " guesses. "
+        msg += String(stringInterpolationSegment: formattedPercentCorrect)
+        msg += "% correct."
+        let alertController = UIAlertController(title: "Results", message:
+            msg, preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+        alertController.addAction(UIAlertAction(title: "New Game", style: UIAlertActionStyle.Default,handler: nil))
+        v.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
 }
