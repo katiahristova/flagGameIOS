@@ -23,11 +23,49 @@ class QuizOfflineViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        createGuessButtons()
+        startNewGame(0)
+        
+    }
+
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+
+    //What happens when we click guess buttons
+    func buttonAction(sender:UIButton!)
+    {
+        if (sender.titleLabel?.text == game.correctAnswerLocalized)
+        { buttonNext.hidden = false
+            game.correctGuesses++
+            if (questionCounter==numberOfQuestions)
+            {
+                game.showEndOfGamePopup(self, newGame: startNewGame)
+            }
+        }
+        else
+        {
+            sender.enabled = false
+            game.incorrectGuesses++
+        }
+        println(sender.titleLabel?.text)
+        println("Correct answer: " + game.correctAnswerLocalized)
+    }
+    
+    
+    //Starts a new game
+    func startNewGame(i:Int) -> Bool
+    {
+        game = GameClass()
         buttonNext.hidden = true
+        questionCounter = 1
         labelQuestionNum.text = "Question " + String(questionCounter) + " of " + String(numberOfQuestions)
         buttonNext.setTitle("next".localized, forState: UIControlState.Normal)
         game.loadGameQuestion(regions, numberOfGuesses: numberOfGuesses)
-        createGuessButtons()
         
         //Set flag image
         flagView.image = UIImage(named:game.correctAnswer)
@@ -41,34 +79,11 @@ class QuizOfflineViewController: UIViewController {
             
         }
 
-    }
-
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        println("Function was called")
+        return true
     }
     
-
-    func buttonAction(sender:UIButton!)
-    {
-        if (sender.titleLabel?.text == game.correctAnswerLocalized)
-        { buttonNext.hidden = false
-            game.correctGuesses++
-            if (questionCounter==numberOfQuestions)
-            {
-                game.showEndOfGamePopup(self)
-            }
-        }
-        else
-        {
-            sender.enabled = false
-            game.incorrectGuesses++
-        }
-        println(sender.titleLabel?.text)
-        println("Correct answer: " + game.correctAnswerLocalized)
-    }
-    
+    //What happens when we click Next button
     @IBAction func nextButtonClick(sender: UIButton) {
         game.loadGameQuestion(regions, numberOfGuesses: numberOfGuesses)
         flagView.image = UIImage(named:game.correctAnswer)

@@ -50,7 +50,7 @@ class GameClass  {
     
     
     //Create and show an end of game popup
-    func showEndOfGamePopup(v:UIViewController)
+    func showEndOfGamePopup(v:UIViewController, newGame: Int -> Bool )
     {
         var totalGuesses = correctGuesses + incorrectGuesses
         var percentCorrect:Double = Double(correctGuesses)/Double(totalGuesses)*100
@@ -61,8 +61,11 @@ class GameClass  {
         msg += "% correct."
         let alertController = UIAlertController(title: "Results", message:
             msg, preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
-        alertController.addAction(UIAlertAction(title: "New Game", style: UIAlertActionStyle.Default,handler: nil))
+        alertController.addAction(UIAlertAction(title: "New Game", style: UIAlertActionStyle.Default) {
+            UIAlertAction in
+            newGame(0)
+            })
+        
         v.presentViewController(alertController, animated: true, completion: nil)
     }
     

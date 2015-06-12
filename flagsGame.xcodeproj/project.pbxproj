@@ -37,6 +37,8 @@
 		8AB81E361B162514001DBFEF /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB81E351B162514001DBFEF /* SignUpViewController.swift */; };
 		8AB81E381B1657C0001DBFEF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB81E371B1657C0001DBFEF /* LoginViewController.swift */; };
 		8ADA880A1B27C4720054E355 /* DataArrays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADA88091B27C4720054E355 /* DataArrays.swift */; };
+		8ADA880C1B2919E70054E355 /* GameClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADA880B1B2919E70054E355 /* GameClass.swift */; };
+		8ADA880E1B29243B0054E355 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8ADA880D1B29243B0054E355 /* Localizable.strings */; };
 		8AE343ED1B24F829006CFD89 /* QuizOfflineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE343EC1B24F829006CFD89 /* QuizOfflineViewController.swift */; };
 		8AE343EF1B2503F5006CFD89 /* AssetCatalog.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AE343EE1B2503F5006CFD89 /* AssetCatalog.xcassets */; };
 /* End PBXBuildFile section */
