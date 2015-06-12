@@ -163,8 +163,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G3v-5V-fRx">
-                                <rect key="frame" x="261" y="285" width="79" height="30"/>
-                                <state key="normal" title="N">
+                                <rect key="frame" x="261" y="305" width="79" height="30"/>
+                                <state key="normal" title="Next">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -172,14 +172,22 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Africa-Cameroon" translatesAutoresizingMaskIntoConstraints="NO" id="tLq-9d-HO7">
-                                <rect key="frame" x="147" y="41" width="307" height="184"/>
+                                <rect key="frame" x="147" y="85" width="307" height="184"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Questions 1 of 5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxQ-2b-R8J">
+                                <rect key="frame" x="147" y="42" width="126" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="3Oj-o6-c3e" firstAttribute="top" secondItem="G3v-5V-fRx" secondAttribute="bottom" constant="330" id="71C-P3-A7A"/>
+                            <constraint firstItem="tLq-9d-HO7" firstAttribute="top" secondItem="wxQ-2b-R8J" secondAttribute="bottom" constant="22" id="A0u-3D-L1d"/>
                             <constraint firstItem="G3v-5V-fRx" firstAttribute="top" secondItem="tLq-9d-HO7" secondAttribute="bottom" constant="30" id="BD4-xU-ome"/>
                             <constraint firstItem="tLq-9d-HO7" firstAttribute="leading" secondItem="b6R-Oo-6bg" secondAttribute="leadingMargin" constant="30" id="DlF-IN-y5L"/>
+                            <constraint firstAttribute="centerX" secondItem="wxQ-2b-R8J" secondAttribute="centerX" constant="90" id="XoH-Iw-tBQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tLq-9d-HO7" secondAttribute="trailing" constant="30" id="f3W-RR-ZPA"/>
                             <constraint firstItem="tLq-9d-HO7" firstAttribute="top" secondItem="jP4-P3-hv5" secondAttribute="bottom" constant="60" id="gf5-RO-vIt"/>
                             <constraint firstAttribute="centerX" secondItem="tLq-9d-HO7" secondAttribute="centerX" id="tje-PF-fbh"/>
@@ -188,6 +196,7 @@
                     <connections>
                         <outlet property="buttonNext" destination="G3v-5V-fRx" id="5cY-3V-G7N"/>
                         <outlet property="flagView" destination="tLq-9d-HO7" id="kHf-rM-tlb"/>
+                        <outlet property="labelQuestionNum" destination="wxQ-2b-R8J" id="cxk-oS-xiR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J26-WI-RxX" userLabel="First Responder" sceneMemberID="firstResponder"/>

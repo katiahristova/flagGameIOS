@@ -18,11 +18,13 @@ class QuizOfflineViewController: UIViewController {
     var regions = ["Africa", "Asia", "Europe", "North_America", "Oceania", "South_America"]
     @IBOutlet weak var flagView: UIImageView!
     @IBOutlet weak var buttonNext: UIButton!
+    @IBOutlet weak var labelQuestionNum: UILabel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         buttonNext.hidden = true
+        labelQuestionNum.text = "Question " + String(questionCounter) + " of " + String(numberOfQuestions)
         buttonNext.setTitle("next".localized, forState: UIControlState.Normal)
         game.loadGameQuestion(regions, numberOfGuesses: numberOfGuesses)
         createGuessButtons()
@@ -75,6 +77,7 @@ class QuizOfflineViewController: UIViewController {
         {
             setButtonLabel(game.questionCountries[i],button: buttonsArray[i])
         }
+        labelQuestionNum.text = "Question " + String(questionCounter) + " of " + String(numberOfQuestions)
         buttonNext.hidden = true
         
         
