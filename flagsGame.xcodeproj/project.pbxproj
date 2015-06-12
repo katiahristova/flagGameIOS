@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8A0333441B2B483800EF9DDA /* StartPageSinglePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0333431B2B483800EF9DDA /* StartPageSinglePlayerViewController.swift */; };
+		8A0333461B2B534C00EF9DDA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0333451B2B534C00EF9DDA /* SettingsViewController.swift */; };
 		8AB81DE71B16088E001DBFEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB81DE61B16088E001DBFEF /* AppDelegate.swift */; };
 		8AB81DE91B16088E001DBFEF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB81DE81B16088E001DBFEF /* ViewController.swift */; };
 		8AB81DEC1B16088E001DBFEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AB81DEA1B16088E001DBFEF /* Main.storyboard */; };
@@ -56,6 +57,7 @@
 
 /* Begin PBXFileReference section */
 		8A0333431B2B483800EF9DDA /* StartPageSinglePlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartPageSinglePlayerViewController.swift; sourceTree = "<group>"; };
+		8A0333451B2B534C00EF9DDA /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8AB81DE11B16088E001DBFEF /* flagsGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flagsGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AB81DE51B16088E001DBFEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8AB81DE61B16088E001DBFEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				8ADA880B1B2919E70054E355 /* GameClass.swift */,
 				8ADA880D1B29243B0054E355 /* Localizable.strings */,
 				8A0333431B2B483800EF9DDA /* StartPageSinglePlayerViewController.swift */,
+				8A0333451B2B534C00EF9DDA /* SettingsViewController.swift */,
 			);
 			path = flagsGame;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				8A0333441B2B483800EF9DDA /* StartPageSinglePlayerViewController.swift in Sources */,
 				8AB81DE71B16088E001DBFEF /* AppDelegate.swift in Sources */,
 				8AE343ED1B24F829006CFD89 /* QuizOfflineViewController.swift in Sources */,
+				8A0333461B2B534C00EF9DDA /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

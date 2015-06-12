@@ -4,6 +4,14 @@
       "idiom" : "universal",
       "scale" : "1x",
       "filename" : "Asia-South_Georgia_And_The_South_Sandwich_Islands.png"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {
