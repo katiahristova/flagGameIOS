@@ -33,7 +33,8 @@ class QuizOfflineViewController: UIViewController {
         //Set guess buttons labels
         for var i = 0; i<numberOfGuesses; i++
         {
-            buttonsArray[i].setTitle(game.questionCountries[i], forState: UIControlState.Normal)
+            var key = game.getLocalizedName(game.questionCountries[i])
+            buttonsArray[i].setTitle(key, forState: UIControlState.Normal)
         }
 
     }
@@ -47,9 +48,10 @@ class QuizOfflineViewController: UIViewController {
 
     func buttonAction(sender:UIButton!)
     {
-        if (sender.titleLabel?.text == game.correctAnswer)
+        if (sender.titleLabel?.text == game.correctAnswerLocalized)
         { buttonNext.hidden = false }
         println(sender.titleLabel?.text)
+        println("Correct answer: " + game.correctAnswerLocalized)
     }
     
     @IBAction func nextButtonClick(sender: UIButton) {
@@ -58,11 +60,11 @@ class QuizOfflineViewController: UIViewController {
         
         for var i = 0; i<numberOfGuesses; i++
         {
-            //var index = game.questionCountries.rangeOfString("_").startIndex
-            //var keyName:String = game.questionCountries[i].substringFromIndex(index)
-            buttonsArray[i].setTitle(game.questionCountries[i].localized, forState: UIControlState.Normal)
+            var key = game.getLocalizedName(game.questionCountries[i])
+            buttonsArray[i].setTitle(key.localized, forState: UIControlState.Normal)
         }
         buttonNext.hidden = true
+        
         
         //Iterate through flags when Next button is clicked
         /* flagView.image = UIImage(named:arrayAllCountries[index])
