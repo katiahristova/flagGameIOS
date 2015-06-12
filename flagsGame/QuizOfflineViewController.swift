@@ -17,9 +17,14 @@ class QuizOfflineViewController: UIViewController {
     var questionCounter = 1;
     var regions = ["Africa", "Asia", "Europe", "North_America", "Oceania", "South_America"]
     @IBOutlet weak var flagView: UIImageView!
-    @IBOutlet weak var buttonNext: UIButton!
-    @IBOutlet weak var labelQuestionNum: UILabel!
     
+    @IBOutlet weak var labelQuestionNum: UILabel!
+    @IBOutlet weak var buttonNext: UIButton!
+   
+    
+    @IBAction func resetButtonClick(sender: UIBarButtonItem) {
+        startNewGame(0)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,7 +89,9 @@ class QuizOfflineViewController: UIViewController {
     }
     
     //What happens when we click Next button
-    @IBAction func nextButtonClick(sender: UIButton) {
+    
+    @IBAction func buttonNextClick(sender: UIButton) {
+        println("NQ click")
         game.loadGameQuestion(regions, numberOfGuesses: numberOfGuesses)
         flagView.image = UIImage(named:game.correctAnswer)
         questionCounter++
@@ -99,13 +106,14 @@ class QuizOfflineViewController: UIViewController {
         //Iterate through flags when Next button is clicked
         /* flagView.image = UIImage(named:arrayAllCountries[index])
         
-         if (index < arrayAllCountries.count-1)
+        if (index < arrayAllCountries.count-1)
         {
-            index++ }
+        index++ }
         else
         {
-            index=0 }*/
+        index=0 }*/
     }
+    
 
     
     //Creates buttons with guesses
