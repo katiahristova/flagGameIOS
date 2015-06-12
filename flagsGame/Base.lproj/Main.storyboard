@@ -221,10 +221,10 @@
             </objects>
             <point key="canvasLocation" x="307" y="-3029"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="vmS-pS-PMS">
             <objects>
-                <viewController id="zf6-Qa-uxw" sceneMemberID="viewController">
+                <viewController id="zf6-Qa-uxw" customClass="SettingsViewController" customModule="flagsGame" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sXs-3f-xgs"/>
                         <viewControllerLayoutGuide type="bottom" id="Tx6-fe-Ba6"/>
@@ -324,10 +324,28 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="zg7-A3-xe6"/>
+                        <barButtonItem title="Save" id="pNi-tf-ge0">
+                            <connections>
+                                <action selector="buttonSave:" destination="zf6-Qa-uxw" id="HRy-CO-wb4"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <connections>
+                        <outlet property="Africa" destination="oVf-tl-qgF" id="MI0-k1-Ps4"/>
+                        <outlet property="Asia" destination="SHR-kU-1NM" id="AUj-ra-6YG"/>
+                        <outlet property="Europe" destination="VHj-fL-LFy" id="Dlc-Rt-a1u"/>
+                        <outlet property="North_America" destination="2BI-LO-VI5" id="CvC-36-HhF"/>
+                        <outlet property="Oceania" destination="CXu-i8-ZUg" id="glZ-BL-gvM"/>
+                        <outlet property="South_America" destination="2AD-0j-Vov" id="mZH-dj-tgN"/>
+                        <outlet property="chooseNumberOfChoices" destination="HcD-bi-ayW" id="ZeA-a9-F02"/>
+                        <outlet property="chooseNumberOfQUestions" destination="GJd-wu-rVh" id="6nB-TU-ANx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n8w-Ur-Bx4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-431" y="-3477"/>
+            <point key="canvasLocation" x="-391" y="-3539"/>
         </scene>
         <!--Fun With Flags-->
         <scene sceneID="dPC-T6-9pk">

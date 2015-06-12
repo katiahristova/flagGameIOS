@@ -10,10 +10,15 @@ import UIKit
 
 class StartPageSinglePlayerViewController: UIViewController {
 
+    var numberOfQuestions:Int = 10
+    var numberOfChoices:Int = 4
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,13 +29,26 @@ class StartPageSinglePlayerViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         println("Segue triggered")
+        var defaults = NSUserDefaults.standardUserDefaults()
+        
+        numberOfQuestions=defaults.integerForKey("numberOfQuestions")
+        
+        numberOfChoices=defaults.integerForKey("numberOfChoices")
+        if (numberOfQuestions == 0)
+        { numberOfQuestions=10}
+        if (numberOfChoices == 0)
+        {
+            numberOfChoices = 4
+        }
+        
+        println(String(numberOfChoices) + " : " + String (numberOfQuestions))
         
         if segue.identifier == "seguePlayWithoutMap"
         {
             println("The button was clicked")
             if let destinationVC = segue.destinationViewController as? QuizOfflineViewController{
-                destinationVC.numberOfQuestions = 10
-                destinationVC.numberOfGuesses = 2
+                destinationVC.numberOfQuestions = numberOfQuestions
+                destinationVC.numberOfGuesses = numberOfChoices
                 destinationVC.regions = ["Africa", "Asia", "Europe", "North_America", "Oceania", "South_America"]
             }
         }
