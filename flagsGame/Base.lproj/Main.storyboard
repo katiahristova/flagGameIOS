@@ -150,6 +150,32 @@
             </objects>
             <point key="canvasLocation" x="1333" y="-2807"/>
         </scene>
+        <!--Quiz Online View Controller-->
+        <scene sceneID="ekO-Oh-jzx">
+            <objects>
+                <viewController id="IxY-iD-KEl" customClass="QuizOnlineViewController" customModule="flagsGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xr1-6v-RcI"/>
+                        <viewControllerLayoutGuide type="bottom" id="XAc-cG-pDc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="f0n-cn-ZM3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="sh3-kA-aDG">
+                                <rect key="frame" x="-4" y="108" width="609" height="255"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="sh3-kA-aDG" id="WR4-cV-o2S"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TVS-W9-VSJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="264" y="-3865"/>
+        </scene>
         <!--Quiz Offline View Controller-->
         <scene sceneID="VJh-XD-uJt">
             <objects>
@@ -174,6 +200,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6W9-ic-vKb">
                                 <rect key="frame" x="284" y="289" width="32" height="30"/>
                                 <state key="normal" title="Next">
+                                    <color key="titleColor" red="1" green="0.17690295025416691" blue="0.23231276539017198" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -346,7 +373,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n8w-Ur-Bx4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1375" y="-2739"/>
+            <point key="canvasLocation" x="-1221" y="-2741"/>
         </scene>
         <!--Fun With Flags-->
         <scene sceneID="dPC-T6-9pk">
@@ -369,10 +396,21 @@
                                     <segue destination="pwM-G9-72M" kind="show" identifier="seguePlayWithoutMap" id="P9D-ku-2PQ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jxH-1H-u4B">
+                                <rect key="frame" x="250" y="245" width="100" height="30"/>
+                                <state key="normal" title="Play With Map">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="IxY-iD-KEl" kind="show" id="4dM-V4-M1g"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="YFi-I8-5Jb" secondAttribute="centerY" constant="100" id="7NT-Lc-gTa"/>
+                            <constraint firstAttribute="centerX" secondItem="jxH-1H-u4B" secondAttribute="centerX" id="ESs-23-zyf"/>
+                            <constraint firstItem="jxH-1H-u4B" firstAttribute="top" secondItem="YFi-I8-5Jb" secondAttribute="bottom" constant="30" id="TFo-b5-r0l"/>
                             <constraint firstAttribute="centerX" secondItem="YFi-I8-5Jb" secondAttribute="centerX" id="uzU-Ue-9Oi"/>
                         </constraints>
                     </view>
