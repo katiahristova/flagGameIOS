@@ -25,7 +25,11 @@ extension QuizOnlineViewController: MKMapViewDelegate {
                 view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
                 view.canShowCallout = true
                 view.calloutOffset = CGPoint(x: -5, y: 5)
-                view.rightCalloutAccessoryView = UIButton.buttonWithType(.DetailDisclosure) as! UIView
+                let button   = UIButton.buttonWithType(UIButtonType.System) as! UIButton
+                button.frame = CGRectMake(60, 30, 60, 30)
+                button.setBackgroundImage(UIImage(named:"Asia-Thailand") as UIImage?, forState: .Normal)
+                view.leftCalloutAccessoryView = button
+                //view.rightCalloutAccessoryView = UIButton.buttonWithType(.DetailDisclosure) as! UIView
                 
             }
             return view

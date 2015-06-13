@@ -25,7 +25,8 @@ class QuizOnlineViewController: UIViewController {
     var country = Country(title: "Hawaii",
         locationName: "Population",
         discipline: "Sculpture",
-        coordinate: CLLocationCoordinate2D(latitude: 21.283921, longitude: -157.831661))
+        coordinate: CLLocationCoordinate2D(latitude: 21.283921, longitude: -157.831661),
+        image: UIImage())
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +41,7 @@ class QuizOnlineViewController: UIViewController {
             let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
                 regionRadius * 200.0, regionRadius * 200.0)
             mapView.setRegion(coordinateRegion, animated: true)
+            
         }
         
         centerMapOnLocation(initialLocation)
@@ -63,17 +65,20 @@ class QuizOnlineViewController: UIViewController {
             if (questionCounter==numberOfQuestions)
             {
                 game.showEndOfGamePopup(self, newGame: startNewGame)
+                mapView.removeAnnotation(country)
             }
             // show artwork on map
             
             flagView.image = nil
-            country = Country(title: "Hawaii",
+            country = Country(title: "Asia-Thailand",
                 locationName: "Population",
                 discipline: "Sculpture",
-                coordinate: CLLocationCoordinate2D(latitude: 21.283921, longitude: -157.831661))
+                coordinate: CLLocationCoordinate2D(latitude: 21.283921, longitude: -157.831661),
+                image: UIImage(named:"Asia-Thailand")!)
             
             mapView.addAnnotation(country)
             mapView.selectAnnotation(country, animated: true)
+            
         }
         else
         {
