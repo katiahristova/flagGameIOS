@@ -12,6 +12,7 @@ class StartPageSinglePlayerViewController: UIViewController {
 
     var numberOfQuestions:Int = 10
     var numberOfChoices:Int = 4
+    var regions:[NSString] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,15 +33,21 @@ class StartPageSinglePlayerViewController: UIViewController {
         var defaults = NSUserDefaults.standardUserDefaults()
         
         numberOfQuestions=defaults.integerForKey("numberOfQuestions")
-        
         numberOfChoices=defaults.integerForKey("numberOfChoices")
+        if let testArray : AnyObject? = defaults.objectForKey("regions") {
+            regions = testArray! as! [NSString]
+        }
+        
         if (numberOfQuestions == 0)
         { numberOfQuestions=10}
         if (numberOfChoices == 0)
         {
             numberOfChoices = 4
         }
-        
+        if(regions==[])
+        {
+            regions =  ["Africa", "Asia", "Europe", "North_America", "Oceania", "South_America"]
+        }
         println(String(numberOfChoices) + " : " + String (numberOfQuestions))
         
         if segue.identifier == "seguePlayWithoutMap"
@@ -49,7 +56,7 @@ class StartPageSinglePlayerViewController: UIViewController {
             if let destinationVC = segue.destinationViewController as? QuizOfflineViewController{
                 destinationVC.numberOfQuestions = numberOfQuestions
                 destinationVC.numberOfGuesses = numberOfChoices
-                destinationVC.regions = ["Africa", "Asia", "Europe", "North_America", "Oceania", "South_America"]
+                destinationVC.regions = regions as! [String]
             }
         }
     }
