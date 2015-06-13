@@ -57,6 +57,16 @@ class StartPageSinglePlayerViewController: UIViewController {
                 destinationVC.regions = regions as! [String]
             }
         }
+        if segue.identifier == "seguePlayWithMap"
+        {
+            println("The button was clicked")
+            if let destinationVC = segue.destinationViewController as? QuizOnlineViewController{
+                destinationVC.numberOfQuestions = numberOfQuestions
+                destinationVC.numberOfGuesses = numberOfChoices
+                destinationVC.regions = regions as! [String]
+            }
+        }
+
     }
 
     /*

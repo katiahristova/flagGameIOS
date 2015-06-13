@@ -165,10 +165,42 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="sh3-kA-aDG">
                                 <rect key="frame" x="-4" y="108" width="609" height="255"/>
                             </mapView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Africa-Algeria" translatesAutoresizingMaskIntoConstraints="NO" id="5qS-Jo-pmN">
+                                <rect key="frame" x="172" y="172" width="240" height="128"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b19-CW-BFJ">
+                                <rect key="frame" x="269" y="330" width="32" height="30"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" red="1" green="0.17690295025416691" blue="0.23231276539017198" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonNextClick:" destination="IxY-iD-KEl" eventType="touchUpInside" id="Fo0-Wg-dhD"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question 1 of 10" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vd0-X8-3LV">
+                                <rect key="frame" x="229" y="40" width="127" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Vd0-X8-3LV" secondAttribute="centerX" constant="7.5" id="FPL-DP-cFn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5qS-Jo-pmN" secondAttribute="trailing" constant="50" id="IFm-Og-koL"/>
+                            <constraint firstItem="5qS-Jo-pmN" firstAttribute="top" secondItem="xr1-6v-RcI" secondAttribute="bottom" constant="100" id="M6N-s7-fgT"/>
+                            <constraint firstItem="5qS-Jo-pmN" firstAttribute="leading" secondItem="f0n-cn-ZM3" secondAttribute="leadingMargin" constant="50" id="U9e-vl-vY0"/>
+                            <constraint firstItem="b19-CW-BFJ" firstAttribute="top" secondItem="xr1-6v-RcI" secondAttribute="bottom" constant="310" id="grb-Pa-te1"/>
+                            <constraint firstAttribute="centerX" secondItem="b19-CW-BFJ" secondAttribute="centerX" constant="15" id="of7-gd-ZyI"/>
+                            <constraint firstItem="Vd0-X8-3LV" firstAttribute="top" secondItem="xr1-6v-RcI" secondAttribute="bottom" constant="20" id="rmW-rE-h7W"/>
+                            <constraint firstItem="XAc-cG-pDc" firstAttribute="top" secondItem="5qS-Jo-pmN" secondAttribute="bottom" constant="340" id="sE5-Vu-Y1A"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="buttonNext" destination="b19-CW-BFJ" id="YbE-Kz-qXB"/>
+                        <outlet property="flagView" destination="5qS-Jo-pmN" id="y6r-Ck-cm2"/>
+                        <outlet property="labelQuestionNum" destination="Vd0-X8-3LV" id="KWh-nE-rND"/>
                         <outlet property="mapView" destination="sh3-kA-aDG" id="WR4-cV-o2S"/>
                     </connections>
                 </viewController>
@@ -402,7 +434,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="IxY-iD-KEl" kind="show" id="4dM-V4-M1g"/>
+                                    <segue destination="IxY-iD-KEl" kind="show" identifier="seguePlayWithMap" id="4dM-V4-M1g"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -548,6 +580,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Africa-Algeria" width="480" height="317"/>
         <image name="Africa-Cameroon" width="480" height="306"/>
     </resources>
     <inferredMetricsTieBreakers>
