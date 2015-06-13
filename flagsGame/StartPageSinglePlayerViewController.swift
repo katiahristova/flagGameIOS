@@ -29,13 +29,12 @@ class StartPageSinglePlayerViewController: UIViewController {
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        println("Segue triggered")
         var defaults = NSUserDefaults.standardUserDefaults()
-        
         numberOfQuestions=defaults.integerForKey("numberOfQuestions")
         numberOfChoices=defaults.integerForKey("numberOfChoices")
         if let testArray : AnyObject? = defaults.objectForKey("regions") {
-            regions = testArray! as! [NSString]
+            if !(testArray==nil)
+            { regions = testArray! as! [NSString]}
         }
         
         if (numberOfQuestions == 0)
@@ -48,7 +47,6 @@ class StartPageSinglePlayerViewController: UIViewController {
         {
             regions =  ["Africa", "Asia", "Europe", "North_America", "Oceania", "South_America"]
         }
-        println(String(numberOfChoices) + " : " + String (numberOfQuestions))
         
         if segue.identifier == "seguePlayWithoutMap"
         {

@@ -341,11 +341,12 @@
                         <outlet property="South_America" destination="2AD-0j-Vov" id="mZH-dj-tgN"/>
                         <outlet property="chooseNumberOfChoices" destination="HcD-bi-ayW" id="ZeA-a9-F02"/>
                         <outlet property="chooseNumberOfQUestions" destination="GJd-wu-rVh" id="6nB-TU-ANx"/>
+                        <segue destination="cpM-E3-aXO" kind="show" identifier="backToStartScreen" id="EuM-MP-IB9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n8w-Ur-Bx4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-391" y="-3539"/>
+            <point key="canvasLocation" x="-1375" y="-2739"/>
         </scene>
         <!--Fun With Flags-->
         <scene sceneID="dPC-T6-9pk">
@@ -379,7 +380,7 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Kh0-uI-uzl"/>
                         <barButtonItem title="Options" id="EYG-67-wKo">
                             <connections>
-                                <segue destination="zf6-Qa-uxw" kind="show" id="1Tl-pW-Gm4"/>
+                                <segue destination="zf6-Qa-uxw" kind="show" identifier="backSegue" id="1Tl-pW-Gm4"/>
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
@@ -387,7 +388,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F0X-Bg-b7f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-431" y="-2793"/>
+            <point key="canvasLocation" x="-601" y="-3477"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="ppJ-KC-Rxh">
@@ -505,10 +506,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v32-tw-ZNS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1243" y="-2793"/>
+            <point key="canvasLocation" x="-1463" y="-3477"/>
         </scene>
     </scenes>
     <resources>
         <image name="Africa-Cameroon" width="480" height="306"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="EuM-MP-IB9"/>
+    </inferredMetricsTieBreakers>
 </document>
