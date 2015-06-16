@@ -19,15 +19,19 @@ extension QuizOnlineViewController: MKMapViewDelegate {
             if let dequeuedView = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier)
                 as? MKPinAnnotationView { // 2
                     dequeuedView.annotation = annotation
+                    let button   = UIButton.buttonWithType(UIButtonType.System) as! UIButton
+                    button.frame = CGRectMake(60, 30, 60, 30)
+                    button.setBackgroundImage(annotation.image, forState: .Normal)
+                    dequeuedView.leftCalloutAccessoryView = button
                     view = dequeuedView
             } else {
                 // 3
                 view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
                 view.canShowCallout = true
-                view.calloutOffset = CGPoint(x: -5, y: 5)
+                view.calloutOffset = CGPoint(x: -25, y: 5)
                 let button   = UIButton.buttonWithType(UIButtonType.System) as! UIButton
                 button.frame = CGRectMake(60, 30, 60, 30)
-                button.setBackgroundImage(UIImage(named:"Asia-Thailand") as UIImage?, forState: .Normal)
+                button.setBackgroundImage(annotation.image, forState: .Normal)
                 view.leftCalloutAccessoryView = button
                 //view.rightCalloutAccessoryView = UIButton.buttonWithType(.DetailDisclosure) as! UIView
                 

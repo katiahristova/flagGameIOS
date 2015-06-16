@@ -69,15 +69,54 @@ class QuizOnlineViewController: UIViewController {
             }
             // show artwork on map
             
+            
             flagView.image = nil
-            country = Country(title: "Asia-Thailand",
+            
+            var lat = 21.283921
+            var long = -157.831661
+            var address = game.correctAnswerLocalized
+            var geocoder = CLGeocoder()
+            geocoder.geocodeAddressString(address, completionHandler: {(placemarks: [AnyObject]!, error: NSError!) -> Void in
+                if let placemark = placemarks?[0] as? CLPlacemark {
+                    
+                    //self.mapView.addAnnotation(MKPlacemark(placemark: placemark))
+                    lat = placemark.location.coordinate.latitude
+                    long = placemark.location.coordinate.longitude
+                    println(String(stringInterpolationSegment: lat) + " : " + String(stringInterpolationSegment: long))
+                    println(String(stringInterpolationSegment: lat) + " : " + String(stringInterpolationSegment: long))
+                    
+                    self.country = Country(title: self.game.correctAnswerLocalized,
+                        locationName: "Population",
+                        discipline: "Sculpture",
+                        coordinate: CLLocationCoordinate2D(latitude: lat, longitude: long),
+                        image: UIImage(named:self.game.correctAnswer)!)
+                    let regionRadius: CLLocationDistance = 1000
+                    let coordinateRegion = MKCoordinateRegionMakeWithDistance(self.country.coordinate,
+                        regionRadius * 3000.0, regionRadius * 3000.0)
+                    println("Changing region")
+                    self.mapView.setRegion(coordinateRegion, animated: true)
+                    
+                    self.mapView.addAnnotation(self.country)
+                    self.mapView.selectAnnotation(self.country, animated: true)
+            }
+            })
+            
+            println(String(stringInterpolationSegment: lat) + " : " + String(stringInterpolationSegment: long))
+
+            country = Country(title: game.correctAnswerLocalized,
                 locationName: "Population",
                 discipline: "Sculpture",
-                coordinate: CLLocationCoordinate2D(latitude: 21.283921, longitude: -157.831661),
-                image: UIImage(named:"Asia-Thailand")!)
+                coordinate: CLLocationCoordinate2D(latitude: lat, longitude: long),
+                image: UIImage(named:game.correctAnswer)!)
+            let regionRadius: CLLocationDistance = 1000
+            let coordinateRegion = MKCoordinateRegionMakeWithDistance(country.coordinate,
+                regionRadius * 200.0, regionRadius * 200.0)
+            println("Changing region")
+            mapView.setRegion(coordinateRegion, animated: true)
             
             mapView.addAnnotation(country)
             mapView.selectAnnotation(country, animated: true)
+            
             
         }
         else
@@ -85,8 +124,6 @@ class QuizOnlineViewController: UIViewController {
             sender.enabled = false
             game.incorrectGuesses++
         }
-        println(sender.titleLabel?.text)
-        println("Correct answer: " + game.correctAnswerLocalized)
     }
     
     
