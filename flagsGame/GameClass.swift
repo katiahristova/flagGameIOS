@@ -81,15 +81,13 @@ class GameClass  {
     
     func checkFlagCharacter(character: String, flagName: String, btnArray: [UIButton]){
         
-        println(flagName)
-        
+        println(btnArray.count)
         
         var cntr: Int = 0
         let charac: Character = Character(character)
         for chrctr in flagName{
             cntr++
             if chrctr == charac{
-                println(cntr)
                 btnArray[cntr-1].setTitle(character, forState: UIControlState.Normal)
                 
             }

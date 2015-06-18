@@ -17,6 +17,7 @@ class HangManController: UIViewController {
     var flagName = String()
     var flagProcessedName = String()
     var buttonsArray:[UIButton] = []
+    var lettersArray: [UIButton] = []
     
     @IBOutlet weak var flagImage: UIImageView!
     @IBOutlet weak var nextButton: UIButton!
@@ -54,11 +55,13 @@ class HangManController: UIViewController {
         flagProcessedName = game.getFlagsName(flagName)
         deleteButtons()
         createGuessButtons()
+        
     }
 
     @IBAction func keyboardButtons(sender: UIButton) {
         let letter = sender.currentTitle!
         sender.enabled = false
+        lettersArray.append(sender)
         if !flagProcessedName.isEmpty{
             game.checkFlagCharacter(letter, flagName: flagProcessedName, btnArray: buttonsArray)
         }
@@ -86,13 +89,14 @@ class HangManController: UIViewController {
         {
             if (character == " " && count(flagProcessedName) >= 12){
                 buttonYplacement += 30
-                buttonXplacement = 20
+                buttonXplacement = -5
+                color = UIColor.whiteColor()
             } else if (character == " "){
                 color = UIColor.whiteColor()
             }
             
             let buttonLeft   = UIButton.buttonWithType(UIButtonType.System) as! UIButton
-            buttonXplacement = buttonXplacement + 25
+            buttonXplacement += 25
             buttonLeft.frame = CGRectMake(CGFloat(buttonXplacement), CGFloat(buttonYplacement), 20, 20)
             buttonLeft.backgroundColor = color
             
@@ -110,6 +114,11 @@ class HangManController: UIViewController {
         for b in buttonsArray {
             b.removeFromSuperview()
         }
+        
+        for l in lettersArray {
+            l.enabled = true
+        }
+        buttonsArray.removeAll(keepCapacity: false)
     }
 
     /*
