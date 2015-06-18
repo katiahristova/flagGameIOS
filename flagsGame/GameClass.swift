@@ -69,4 +69,32 @@ class GameClass  {
         v.presentViewController(alertController, animated: true, completion: nil)
     }
     
+    func getFlagsName(flagName: String) -> String{
+        var flagNameArray = flagName.componentsSeparatedByString("-")
+        
+        let myReplacementString = String(map(flagNameArray[1].generate()) {
+            $0 == "_" ? " " : $0
+            })
+        
+        return myReplacementString.uppercaseString
+    }
+    
+    func checkFlagCharacter(character: String, flagName: String, btnArray: [UIButton]){
+        
+        println(flagName)
+        
+        
+        var cntr: Int = 0
+        let charac: Character = Character(character)
+        for chrctr in flagName{
+            cntr++
+            if chrctr == charac{
+                println(cntr)
+                btnArray[cntr-1].setTitle(character, forState: UIControlState.Normal)
+                
+            }
+        }
+        
+    }
+    
 }

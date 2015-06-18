@@ -33,6 +33,7 @@ class QuizOnlineViewController: UIViewController {
         createGuessButtons()
         startNewGame(0)
         
+        
         // set initial location in Honolulu
         let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
         

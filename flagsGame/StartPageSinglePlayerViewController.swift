@@ -66,6 +66,14 @@ class StartPageSinglePlayerViewController: UIViewController {
                 destinationVC.regions = regions as! [String]
             }
         }
+        
+        
+        if let destinationVC = segue.destinationViewController as? HangManController{
+            destinationVC.numberOfQuestions = numberOfQuestions
+            destinationVC.numberOfGuesses = numberOfChoices
+            destinationVC.regions = regions as! [String]
+        }
+        
 
     }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B4B4F6F1B30BCE200EAA0FA /* HangManController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4B4F6E1B30BCE200EAA0FA /* HangManController.swift */; };
 		8A0333441B2B483800EF9DDA /* StartPageSinglePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0333431B2B483800EF9DDA /* StartPageSinglePlayerViewController.swift */; };
 		8A0333461B2B534C00EF9DDA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0333451B2B534C00EF9DDA /* SettingsViewController.swift */; };
 		8A0333481B2C590E00EF9DDA /* QuizOnlineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0333471B2C590E00EF9DDA /* QuizOnlineViewController.swift */; };
@@ -59,6 +60,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B4B4F6E1B30BCE200EAA0FA /* HangManController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HangManController.swift; sourceTree = "<group>"; };
 		8A0333431B2B483800EF9DDA /* StartPageSinglePlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartPageSinglePlayerViewController.swift; sourceTree = "<group>"; };
 		8A0333451B2B534C00EF9DDA /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8A0333471B2C590E00EF9DDA /* QuizOnlineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizOnlineViewController.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				8AB81DE81B16088E001DBFEF /* ViewController.swift */,
 				8AB81DEA1B16088E001DBFEF /* Main.storyboard */,
 				8A0333471B2C590E00EF9DDA /* QuizOnlineViewController.swift */,
+				3B4B4F6E1B30BCE200EAA0FA /* HangManController.swift */,
 				8AB81DED1B16088E001DBFEF /* Images.xcassets */,
 				8AB81DEF1B16088E001DBFEF /* LaunchScreen.xib */,
 				8AB81DE41B16088E001DBFEF /* Supporting Files */,
@@ -348,6 +351,7 @@
 				8ADA880C1B2919E70054E355 /* GameClass.swift in Sources */,
 				8AB81E381B1657C0001DBFEF /* LoginViewController.swift in Sources */,
 				8AB81E361B162514001DBFEF /* SignUpViewController.swift in Sources */,
+				3B4B4F6F1B30BCE200EAA0FA /* HangManController.swift in Sources */,
 				8AB81DE91B16088E001DBFEF /* ViewController.swift in Sources */,
 				8ADA880A1B27C4720054E355 /* DataArrays.swift in Sources */,
 				8A0333441B2B483800EF9DDA /* StartPageSinglePlayerViewController.swift in Sources */,
