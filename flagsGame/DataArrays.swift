@@ -56,7 +56,7 @@ class DataArrays {
         var questionCountries:[String] = []
         while questionCountries.count<number
         {
-            var newCountry = countries[getRandomIndex(countries)]
+            var newCountry = countries[number]
             while contains(questionCountries,newCountry)
             { newCountry = countries[getRandomIndex(countries)] }
             questionCountries.append(newCountry)

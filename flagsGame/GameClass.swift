@@ -15,10 +15,12 @@ class GameClass  {
     var correctAnswerLocalized = ""
     var correctGuesses = 0;
     var incorrectGuesses = 0;
+    var data = DataArrays()
+    
     
     func loadGameQuestion(regions:[String], numberOfGuesses:Int)
     {
-        var data = DataArrays()
+        
     //Get flags filename list according to regions selected
         arrayAllCountries = data.getCountriesList(regions)
         questionCountries = data.getCountriesForQuestion(numberOfGuesses, countries: arrayAllCountries)
@@ -27,13 +29,21 @@ class GameClass  {
     }
     
     
+    func loadCountriesArray(regions:[String], numberOfGuesses:Int) -> [String]
+    {
+        arrayAllCountries = data.getCountriesList(regions)
+        
+        return arrayAllCountries
+    }
+    
+    
+    
     //Find the index of - in the name string, so we can remove continent name
     func findDashIndex(string:String) -> Int
     {
         let needle: Character = "-"
         if let idx = find(string, needle) {
             let pos = distance(string.startIndex, idx)
-            //println("Found \(needle) at position \(pos)")
             return pos
         }
         return -1
@@ -81,11 +91,10 @@ class GameClass  {
     
     func checkFlagCharacter(character: String, flagName: String, btnArray: [UIButton]){
         
-        println(btnArray.count)
-        
         var cntr: Int = 0
         let charac: Character = Character(character)
-        for chrctr in flagName{
+        for chrctr in flagName
+            {
             cntr++
             if chrctr == charac{
                 btnArray[cntr-1].setTitle(character, forState: UIControlState.Normal)
@@ -93,6 +102,43 @@ class GameClass  {
             }
         }
         
+    }
+    
+    func isHangManCompleted(var btnArray: [UIButton]) -> Bool {
+        
+        for btn in btnArray {
+            if btn.currentTitle == nil && btn.tag == 1 {
+             return false
+            }
+        }
+        
+        return true
+    }
+    
+    func hangManCompletedPopup(v:UIViewController, newGame:(()->())?) {
+        let alertController = UIAlertController(title: "Congratulations!", message:
+            "You rock!", preferredStyle: UIAlertControllerStyle.Alert)
+        
+    
+        var dismissBtn = UIAlertAction(title: "Main Menu", style: UIAlertActionStyle.Default) {
+            UIAlertAction in
+            v.navigationController!.popToRootViewControllerAnimated(true)
+        }
+        
+        var nwGame = UIAlertAction(title: "New Game", style: UIAlertActionStyle.Default) {
+            UIAlertAction in
+            newGame?()
+        }
+        
+        alertController.addAction(nwGame)
+        alertController.addAction(dismissBtn)
+        
+        v.presentViewController(alertController, animated: true, completion: nil)
+    
+    }
+    
+    func getRandomIndex(countries:[String]) -> Int {
+        return Int(arc4random_uniform(UInt32(countries.count)))
     }
     
 }
